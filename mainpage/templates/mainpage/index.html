@@ -2,6 +2,12 @@
 
 {% block title %}
     Головна сторінка
+    {% if user.is_authenticated %}
+      Hi {{ user.username }}!
+    {% else %}
+      <p>You are not logged in</p>
+      <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
 {% endblock %}
 
 {% block header %}
@@ -617,9 +623,15 @@
               </a>
             </li>
             <li class="nav-item ms-lg-n4">
-              <a class="nav-link" href="./account-orders.html">
-                <i class="fa fa-user"></i>
-              </a>
+              {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'logout' %}" title="Logout">
+                    <i class="fa-sharp fa-solid fa-person-walking-arrow-right"></i>
+                </a>
+              {% else %}
+                <a class="nav-link" href="./accounts/login" title="Log in">
+                    <i class="fa fa-user"></i>
+                </a>
+              {% endif %}
             </li>
             <li class="nav-item ms-lg-n4">
               <a class="nav-link" href="./account-wishlist.html">
