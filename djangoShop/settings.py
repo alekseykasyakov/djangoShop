@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'mainpage',
     'users',
     'crispy_forms',
+    'categories',
     'fontawesomefree',
     'django.contrib.admin',
     'django.contrib.auth',

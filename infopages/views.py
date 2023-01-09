@@ -7,3 +7,7 @@ def about(request):
 
 def faq(request):
     return render(request, 'infopages/faq.html')
+
+
+def shipping(request):
+    return render(request, 'infopages/shipping.html')
