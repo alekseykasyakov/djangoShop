@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'infopages',
+    'languages',
     'mainpage',
     'users',
     'crispy_forms',
